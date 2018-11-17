@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    soloOrBand: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
     instrument: {
       type: DataTypes.STRING,
       allowNull: false 
