@@ -1,8 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "root",
+    "database": "bandsDb",
+    "port": 8889,
     "host": "localhost",
     "dialect": "mysql"
   },
