@@ -6,15 +6,38 @@
         <h2>Find a New Band or Bandmember</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">What are you looking for?</label>
+            <!--Name Div-->
+            <div class="form-name">
+              <label for="name">Enter your name: </label>
+              <input type="text" name="questionOne" id="name" required>
+            </div>
+            <!--Solo or Band div-->
+            <label for="soloOrBand">What are you looking for?</label>
             <div>
-              <input type="radio" id="band" name="questionOne" value="band" checked>
+              <input type="radio" id="band" name="questionTwo" value="band" checked>
               <label for="band">Bands</label>
             </div>
-
+            <!---->
             <div>
-              <input type="radio" id="musician" name="questionOne" value="musician">
-              <label for="musician">Musicians</label>
+              <input type="radio" id="musician" name="questionThree" value="musician">
+              <label for="musician">Musician</label>
+            </div>
+            <!--Genre div-->
+            <div class="genre">
+              <label for="genre">Genre of Music: </label>
+              <input type="text" name="questionFour" id="genre" required>
+            </div>
+            <!--Years of Experience div-->
+            <div class="experience">
+              <label for="experience">Years of Experience: </label>
+              <input type="text" name="questionFive" id="experience" required>
+            </div>
+            <!--Bio div-->
+            <div>
+              <label for="bio">Bio: </label>
+              <textarea id="bio" name="about" rows="5" cols="33">
+              Tell us more...
+              </textarea>
             </div>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
