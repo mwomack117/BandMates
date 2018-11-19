@@ -3,27 +3,45 @@
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
+        <h2>Find a New Band or Bandmember</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <!--Name Div-->
+            <div class="form-name">
+              <label for="name">Enter your name: </label>
+              <input type="text" name="questionOne" id="name" required>
+            </div>
+            <!--Solo or Band div-->
+            <label for="soloOrBand">What are you looking for?</label>
+            <div>
+              <input type="radio" id="band" name="questionTwo" value="band" checked>
+              <label for="band">Bands</label>
+            </div>
+            <!---->
+            <div>
+              <input type="radio" id="musician" name="questionThree" value="musician">
+              <label for="musician">Musician</label>
+            </div>
+            <!--Genre div-->
+            <div class="genre">
+              <label for="genre">Genre of Music: </label>
+              <input type="text" name="questionFour" id="genre" required>
+            </div>
+            <!--Years of Experience div-->
+            <div class="experience">
+              <label for="experience">Years of Experience: </label>
+              <input type="text" name="questionFive" id="experience" required>
+            </div>
+            <!--Bio div-->
+            <div>
+              <label for="bio">Bio: </label>
+              <textarea id="bio" name="about" rows="5" cols="33">
+              Tell us more...
+              </textarea>
+            </div>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
       </div>
     </div>
   </div>
