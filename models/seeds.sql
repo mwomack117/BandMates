@@ -1,5 +1,5 @@
-INSERT into Musicians ( name, soloOrBand, instrument, genre, yearsExp, bio) 
-VALUES ("mike", true, "guitar", "metal, rock, classical, jazz", 10, "I most enjoy playing jazz and funk improvisation, as well as classical. Love to go to live show!");
+INSERT into Musicians ( username, password, name, soloOrBand, instrument, genre, yearsExp, bio) 
+VALUES ("musikMike", "password","mike", true, "guitar", "metal, rock, classical, jazz", 10, "I most enjoy playing jazz and funk improvisation, as well as classical. Love to go to live show!");
 
 INSERT into Musicians ( name, soloOrBand, instrument, genre, yearsExp, bio) 
 VALUES ("zach", true, "drums", "rock", 15, "I also like to play bass guitar");
