@@ -1,4 +1,7 @@
 
+.list-group-item {
+  line-height: 2.5;
+}
 /* ------ Landing Page ------- */
 
 #landing {
@@ -149,3 +152,15 @@ nav {
   padding: 0;
   list-style-type: none;
 }
+
+
+/* --------- Dashboard Page ---------- */
+
+.card {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* ----------- Index Page --------------*/

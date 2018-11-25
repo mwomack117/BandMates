@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Load landing page
+  // Load Landing page
   app.get("/", function (req, res) {
     res.render("landing")
   });
@@ -11,21 +11,36 @@ module.exports = function (app) {
     res.render("contact")
   });
 
-  // Load index page
+  // Load Index page
   app.get("/index", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    // db.Example.findAll({}).then(function (dbExamples) {
+    res.render("index", {
+      msg: "Welcome!",
+      // examples: dbExamples
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load Contact page
+  app.get("/", function (req, res) {
+    res.render("contact")
+  });
+
+  // Load Dashboard page
+  app.get("/dashboard", function (req, res) {
+      db.Musician.findAll({}).then(function (dbMusicians) {
+    res.render("dashboard", {
+      musicians: dbMusicians
+    })
+  });
+});
+
+
+  // Load Search results on dashboard page 
+  app.get("/dashboard/:type/:term", function (req, res) {
+    db.Musician.findAll({
+      where: { id: req.params.id } }).then(function (results) {
+      res.render("dashboard", {
+      Musicians: results
       });
     });
   });
