@@ -3,8 +3,8 @@ var bCrypt = require('bcrypt-nodejs');
 
 module.exports = function (passport, musician) {
     var Musician = musician;
-    var LocalsStrategy = require("passport-local").Strategy;
-    passport.use("local-signup", new LocalsStrategy(
+    var LocalStrategy = require("passport-local").Strategy;
+    passport.use("local-signup", new LocalStrategy(
         {
             usernameField: "userName",
             PasswordField: "password",
