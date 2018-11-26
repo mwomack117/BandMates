@@ -164,3 +164,23 @@ nav {
 }
 
 /* ----------- Index Page --------------*/
+
+#home {
+  font-family: Helvetica, sans-serif;
+	background: url("http://wvuafm.ua.edu/wp-content/uploads/2013/04/Concert1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  
+}
+
+#submit {
+  width:25%;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+#contactCol {
+  margin-top: 20px;
+}
