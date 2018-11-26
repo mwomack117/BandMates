@@ -3,41 +3,41 @@
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>Find a New Band or Bandmember</h2>
-        <form class="clearfix mb-4" action="POST">
+        <h3>Become a BandMates user to start searching for other musicians.</h3>
+        <form class="clearfix mb-4" id="new-user" method="POST">
           <div class="form-group">
             <!--Name Div-->
             <div class="form-name">
               <label for="name">Enter your name: </label>
-              <input type="text" name="questionOne" id="name" required>
+              <input type="text" name="questionOne" id="name">
             </div>
             <!--Solo or Band div-->
-            <label for="soloOrBand">What are you looking for?</label>
             <div>
-              <input type="radio" id="band" name="questionTwo" value="band" checked>
-              <label for="band">Bands</label>
-            </div>
-            <!---->
-            <div>
-              <input type="radio" id="musician" name="questionThree" value="musician">
+              <label for="soloOrBand">Are you a band or solo artist?</label>
+              <input type="radio" id="band" name="radAnswer" value="true">
+              <label for="band">Band</label>
+              <input type="radio" id="solo" name="radAnswer" value="false">
               <label for="musician">Musician</label>
+            </div>
+            <!--Instrument div-->
+            <div class="Instrument">
+              <label for="instrument">What instrument(s) do you play? </label>
+              <input type="text" name="questionFour" id="instrument">
             </div>
             <!--Genre div-->
             <div class="genre">
               <label for="genre">Genre of Music: </label>
-              <input type="text" name="questionFour" id="genre" required>
+              <input type="text" name="questionFour" id="genre">
             </div>
             <!--Years of Experience div-->
             <div class="experience">
               <label for="experience">Years of Experience: </label>
-              <input type="text" name="questionFive" id="experience" required>
+              <input type="text" name="questionFive" id="experience">
             </div>
             <!--Bio div-->
             <div>
               <label for="bio">Bio: </label>
-              <textarea id="bio" name="about" rows="5" cols="33">
-              Tell us more...
-              </textarea>
+              <textarea id="bio" name="about" rows="5" cols="33" placeholder="Tell us more about yourself.."></textarea>
             </div>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
