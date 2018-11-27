@@ -20,11 +20,6 @@ module.exports = function (app) {
     });
   });
 
-  // Load Contact page
-  app.get("/", function (req, res) {
-    res.render("contact")
-  });
-
   // Load Dashboard page
   app.get("/dashboard", function (req, res) {
       db.Musician.findAll({}).then(function (dbMusicians) {
@@ -33,17 +28,6 @@ module.exports = function (app) {
     })
   });
 });
-
-
-  // Load Search results on dashboard page 
-  app.get("/dashboard/:type/:term", function (req, res) {
-    db.Musician.findAll({
-      where: { id: req.params.id } }).then(function (results) {
-      res.render("dashboard", {
-      Musicians: results
-      });
-    });
-  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
