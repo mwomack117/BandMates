@@ -2,12 +2,14 @@
 
 // Get references to page elements
 var $name = $("#name");
+var $img = $("#img");
 var $instrument = $("#instrument");
 var $genre = $("#genre");
 var $experience = $("#experience");
 var $bio = $("#bio");
+var $email = $("#email");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+
 
 
 // Create function to POST new user to database
@@ -17,7 +19,7 @@ function saveUser(user) {
       "Content-Type": "application/json"
     },
     type: "POST",
-    url: "api/musicians",
+    url: "api/musicians/all/all/all",
     data: JSON.stringify(user)
   });
 }
@@ -29,16 +31,18 @@ var handleUserSubmit = function (event) {
 
   var Musician = {
     name: $name.val().trim(),
+    img: $img.val().trim(),
     soloOrBand: $('input[name="radAnswer"]:checked').val(),
-    instrument: $instrument.val().trim(),
-    genre: $genre.val().trim(),
+    instrument: $instrument.val().trim().toLowerCase(),
+    genre: $genre.val().trim().toLowerCase(),
     yearsExp: $experience.val().trim(),
-    bio: $bio.val().trim()
+    bio: $bio.val().trim(),
+    email: $email.val().trim()
   };
 
   console.log(Musician);
 
-  if (Musician.name === "" || Musician.instrument === ""
+  if (Musician.name === "" || Musician.instrument === "" || Musician.email === ""
   || Musician.genre === "" || Musician.yearsExp === "" || Musician.bio === "") {
     alert("Please fill out the entire form.");
     return;
@@ -50,11 +54,13 @@ var handleUserSubmit = function (event) {
     });
 
   $name.val("");
+  $img.val("");
   $('input[name="radAnswer"]').prop('checked', false);
   $instrument.val("");
   $genre.val("");
   $experience.val("");
   $bio.val("");
+  $email.val("");
 
   window.location.href = 'dashboard';
 
