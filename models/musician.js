@@ -1,5 +1,12 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Musician = sequelize.define("Musician", {
+    username: {
+      type: DataTypes.TEXT
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -14,12 +21,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     instrument: {
       type: DataTypes.STRING,
-      allowNull: false 
+      allowNull: false
     },
     genre: {
       type: DataTypes.STRING,
       allowNull: false
-    }, 
+    },
     yearsExp: DataTypes.INTEGER,
     bio: {
       type: DataTypes.TEXT,
