@@ -5,6 +5,8 @@ module.exports = function (app) {
   // Post route for saving new musician
   app.post("/api/musicians/all/all/all", function (req, res) {
     db.Musician.create({
+      username: req.body.username,
+      password: req.body.password,
       name: req.body.name,
       img: req.body.img,
       soloOrBand: req.body.soloOrBand,

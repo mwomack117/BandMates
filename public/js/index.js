@@ -1,6 +1,8 @@
 // ----- JS to handle new users -------- //
 
 // Get references to page elements
+var $username =$("#username")
+var $password =$("#password")
 var $name = $("#name");
 var $img = $("#img");
 var $instrument = $("#instrument");
@@ -30,6 +32,8 @@ var handleUserSubmit = function (event) {
   event.preventDefault();
 
   var Musician = {
+    username: $username.val().trim(),
+    password: $password.val().trim(),
     name: $name.val().trim(),
     img: $img.val().trim(),
     soloOrBand: $('input[name="radAnswer"]:checked').val(),
