@@ -11,8 +11,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    img: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     soloOrBand: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
       allowNull: false
     },
     instrument: {
@@ -30,6 +34,10 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         len: [1, 300]
       }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   return Musician;

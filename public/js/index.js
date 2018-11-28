@@ -1,99 +1,74 @@
+// ----- JS to handle new users -------- //
+
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $name = $("#name");
+var $img = $("#img");
+var $instrument = $("#instrument");
+var $genre = $("#genre");
+var $experience = $("#experience");
+var $bio = $("#bio");
+var $email = $("#email");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
+// Create function to POST new user to database
+function saveUser(user) {
+  return $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "api/musicians/all/all/all",
+    data: JSON.stringify(user)
   });
-};
+}
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// handleFormSubmit is called whenever we submit a new user
+// Save the new user to the db 
+var handleUserSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var Musician = {
+    name: $name.val().trim(),
+    img: $img.val().trim(),
+    soloOrBand: $('input[name="radAnswer"]:checked').val(),
+    instrument: $instrument.val().trim().toLowerCase(),
+    genre: $genre.val().trim().toLowerCase(),
+    yearsExp: $experience.val().trim(),
+    bio: $bio.val().trim(),
+    email: $email.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  console.log(Musician);
+
+  if (Musician.name === "" || Musician.instrument === "" || Musician.email === ""
+  || Musician.genre === "" || Musician.yearsExp === "" || Musician.bio === "") {
+    alert("Please fill out the entire form.");
     return;
   }
+  
+  saveUser(Musician)
+    .then(function () {
+      return Musician;
+    });
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
+  $name.val("");
+  $img.val("");
+  $('input[name="radAnswer"]').prop('checked', false);
+  $instrument.val("");
+  $genre.val("");
+  $experience.val("");
+  $bio.val("");
+  $email.val("");
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  window.location.href = 'dashboard';
+
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+// Add event listeners to the submit 
+$submitBtn.on("click", handleUserSubmit);
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+

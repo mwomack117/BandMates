@@ -1,10 +1,10 @@
-<div id="home">
+<body id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
+      <div id="contactCol" class="col-12">
         <h1>{{msg}}</h1>
-        <h2>Find a New Band or Bandmember</h2>
-        <form class="clearfix mb-4" action="POST">
+        <h3>Become a BandMates user to start searching for other musicians.</h3>
+        <form class="clearfix mb-4" id="new-user" method="POST">
           <div class="form-group">
             <!--Name Div-->
             <div class="userName">
@@ -19,16 +19,20 @@
               <label for="name">Enter your name: </label>
               <input type="text" name="questionThree" id="name" required>
             </div>
-            <!--Solo or Band div-->
-            <label for="soloOrBand">What are you looking for?</label>
+            <!--Photo Div-->
             <div>
-              <input type="radio" id="band" name="questionFour" value="band" checked>
-              <label for="band">Bands</label>
+              <label for="img">Add Photo (URL): </label>
+              <input type="text" name="questionTwo" id="img">
             </div>
-            <!---->
+            <!--Solo or Band div-->
             <div>
-              <input type="radio" id="musician" name="questionFive" value="musician">
-              <label for="musician">Musician</label>
+              <label for="soloOrBand">Are you a band or solo artist?</label>
+              <div>
+                <input type="radio" id="band" name="radAnswer" value="band">
+                <label for="band">Band</label>&nbsp;&nbsp;
+                <input type="radio" id="solo" name="radAnswer" value="solo">
+                <label for="musician"> Solo Musician</label>
+              </div>
             </div>
             <!--Instrument div-->
             <div class="Instrument">
@@ -38,18 +42,30 @@
             <!--Genre div-->
             <div class="genre">
               <label for="genre">Genre of Music: </label>
-              <input type="text" name="questionSeven" id="genre" required>
+              <div>
+                <input type="text" name="questionFive" id="genre">
+              </div>
             </div>
             <!--Years of Experience div-->
             <div class="experience">
               <label for="experience">Years of Experience: </label>
-              <input type="text" name="questionEight" id="experience" required>
+              <div>
+                <input type="text" name="questionSix" id="experience">
+              </div>
             </div>
             <!--Bio div-->
             <div>
-              <label for="bio">Bio: Tell us about yourself... </label>
-              <textarea id="bio" name="about" rows="5" cols="33">
-              </textarea>
+              <label for="bio">Bio: </label>
+              <div>
+                <textarea id="bio" name="about" rows="5" cols="33" placeholder="Tell us more about yourself.."></textarea>
+              </div>
+            </div>
+            <!--Genre div-->
+            <div class="email">
+              <label for="genre">Contact Email: </label>
+              <div>
+                <input type="text" name="email" id="email" placeholder="example@email.com">
+              </div>
             </div>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
@@ -57,7 +73,7 @@
       </div>
     </div>
   </div>
-</div>
+</body>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

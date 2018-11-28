@@ -1,4 +1,7 @@
 
+.list-group-item {
+  line-height: 2.5;
+}
 /* ------ Landing Page ------- */
 
 #landing {
@@ -148,4 +151,58 @@ nav {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+
+/* --------- Dashboard Page ---------- */
+
+#dashboard {
+  font-family: Helvetica, sans-serif;
+}
+
+.card {
+   width: 20%;
+   display: inline-block;
+   margin: 10px;
+}
+
+.card:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.info{
+   padding: 10px;
+}
+
+img {
+   width: 20%;
+   height: 150px;
+ }
+
+ #results {
+   margin-bottom: 5%;
+ }
+
+/* ----------- Index Page --------------*/
+
+#home {
+  font-family: Helvetica, sans-serif;
+	background: url("http://wvuafm.ua.edu/wp-content/uploads/2013/04/Concert1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  
+}
+
+#submit {
+  width:25%;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+#contactCol {
+  margin-top: 20px;
 }
