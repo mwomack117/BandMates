@@ -1,17 +1,91 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Your Dashboard</h5>
-          <p>
-            <strong>Name</strong>: {{musician.name}}</p>
-          <p>
-          <p>
-            <strong>Your Bio</strong>: {{musician.bio}}</p>
-            <a href="/">← Back To Home</a>
+<body id="dashboard">
+
+  <div class="container">
+    <div class="jumbotron">
+      <h2 class="display-4">Custom Search</h2>
+      <form id="search-filter">
+        <div class="form-group">
+          <label for="form-instrument">Search By Instrument</label>
+          <select class="form-control" id="form-instrument">
+            <option selected>All</option>
+            <option>Guitar</option>
+            <option>Bass</option>
+            <option>Piano</option>
+            <option>Vocals</option>
+            <option>Drums</option>
+            <option>Saxophone</option>
+            <option>Trumpet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="form-genre">Select By Genre</label>
+          <select class="form-control" id="form-genre">
+            <option selected>All</option>
+            <option>Rock</option>
+            <option>Metal</option>
+            <option>Rap</option>
+            <option>Pop</option>
+            <option>Hip-Hop</option>
+            <option>Alternative</option>
+            <option>Classical</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="form-solo-band">Looking for Band or Solo Musician</label>
+          <select class="form-control" id="form-solo-band">
+            <option selected>All</option>
+            <option>Solo</option>
+            <option>Band</option>
+          </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </form>
+    </div>
+
+    <br>
+
+    <h2>Results:
+      <a href="/"><button style="float:right;" class="btn btn-primary my-2 my-sm-0">Log Out</button></a>
+    </h2>
+    <hr>
+    <div id="results">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modalLabel">User Name</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Bio: Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown
+              printer took a galley of type and scrambled it to make a type
+              specimen book.</p><br />
+            <p>Contact: example@email.com</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
+
+    <footer>
+      <p>&copy; BandMates</p>
+    </footer>
+
   </div>
-</div>
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+<script src="/js/dashboard.js"></script>

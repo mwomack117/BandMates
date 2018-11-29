@@ -56,7 +56,9 @@ var handleUserSubmit = function (event) {
     .then(function () {
       return Musician;
     });
-
+  
+  $username.val(""),
+  $password.val(""),
   $name.val("");
   $img.val("");
   $('input[name="radAnswer"]').prop('checked', false);
@@ -74,5 +76,6 @@ var handleUserSubmit = function (event) {
 $submitBtn.on("click", handleUserSubmit);
 
 
-
-
+$("#login").on("click", function() {
+  
+})
