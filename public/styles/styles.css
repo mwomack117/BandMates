@@ -206,3 +206,8 @@ img {
 #contactCol {
   margin-top: 20px;
 }
+
+.jumbotron {
+  background-color: black;
+  margin-top: 20px;
+}
