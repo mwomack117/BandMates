@@ -31,6 +31,7 @@ header {
 .branding {
   float: left;
   font-size: 38px;
+  margin-top: 1%;
 }
 
 .branding h1 {
@@ -69,7 +70,7 @@ nav {
 
 #introduction {
   text-align: center;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 10%;
 }
 
@@ -106,6 +107,10 @@ nav {
   color: white;
 }
 
+#signIn{
+  position: relative;
+  right: 1.5%;
+}
 
 /* ---------- Contact Page ---------  */
 #contact {
@@ -158,25 +163,27 @@ nav {
 
 #dashboard {
   font-family: Helvetica, sans-serif;
-  background-color: cadetblue;
-}
-
-.jumbotron {
-  margin-top: 5%;
   background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: 100% 100%;
   color: white;
+}
+
+#searchBox {
+  margin-top: 5%;
+  background-color: #131313a4;
+  background-size: 20px 20px;
   min-height: 500px;
 }
 
 .form-control {
-  width: 25%;
+  width: 50%;
 }
 
 .card {
    width: 18rem;
    display: inline-block;
    margin: 15px;
+   color: black
 }
 
 .card:hover {
@@ -221,7 +228,10 @@ img {
   margin-top: 20px;
 }
 
-.jumbotron {
-  background-color: black;
-  margin-top: 20px;
+#signinBox {
+  background-color:  #131313a4;
+  margin-top: 10%;
+  width: 165%;
+  position: relative;
+  right: 25%;
 }

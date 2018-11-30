@@ -3,7 +3,6 @@
 // Get references to page elements
 var $username =$("#username")
 var $password =$("#password")
-var $name = $("#name");
 var $img = $("#img");
 var $instrument = $("#instrument");
 var $genre = $("#genre");
@@ -34,7 +33,6 @@ var handleUserSubmit = function (event) {
   var Musician = {
     username: $username.val().trim(),
     password: $password.val().trim(),
-    name: $name.val().trim(),
     img: $img.val().trim(),
     soloOrBand: $('input[name="radAnswer"]:checked').val(),
     instrument: $instrument.val().trim().toLowerCase(),
@@ -59,7 +57,6 @@ var handleUserSubmit = function (event) {
   
   $username.val(""),
   $password.val(""),
-  $name.val("");
   $img.val("");
   $('input[name="radAnswer"]').prop('checked', false);
   $instrument.val("");

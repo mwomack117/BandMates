@@ -52,7 +52,7 @@ $(document).ready(function () {
 
         var newUserName = $("<h5>");
         newUserName.addClass("card-title");
-        newUserName.text(musician.name);
+        newUserName.text(musician.username);
 
         var newUserInfo = $('<ul><li class="card-text">Instrument: ' + musician.instrument + 
         "</li><li>Genre: " + musician.genre + "</li><li>Status: " + musician.soloOrBand + "</li>");
