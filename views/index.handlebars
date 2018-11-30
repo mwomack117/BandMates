@@ -5,20 +5,20 @@
         <div class="jumbotron" id="signinBox">
           <h1>{{msg}}</h1>
           <h3>Become a BandMates user to start searching for other musicians.</h3>
-          <form class="clearfix mb-4" id="new-user" method="POST">
+          <form class="clearfix mb-4" id="new-user" method="POST" action="/signup">
             <div class="form-group">
               <!--Name Div-->
               <div class="userName">
                 <label for="username">Enter a User name: </label>
                 <div>
-                  <input type="text" name="questionOne" id="username" required>
+                  <input type="text" name="username" id="username" required>
                 </div>
               </div>
               <!--Password Div-->
               <div class="password">
                 <label for="password">Enter your password: </label>
                 <div>
-                  <input type="text" name="questionTwo" id="password" required>
+                  <input type="text" name="password" id="password" required>
                 </div>
               </div>
               <!--Photo Div-->

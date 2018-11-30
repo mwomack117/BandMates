@@ -1,12 +1,13 @@
 //load bcrypt
 var bCrypt = require('bcrypt-nodejs');
+var db = require("../models");
 
 module.exports = function (passport, musician) {
     var Musician = musician;
     var LocalStrategy = require("passport-local").Strategy;
     passport.use("local-signup", new LocalStrategy(
         {
-            usernameField: "userName",
+            usernameField: "username",
             PasswordField: "password",
             passReqToCallback: true
         },
@@ -61,7 +62,7 @@ module.exports = function (passport, musician) {
     //serialize
     passport.serializeUser(function (musician, done) {
 
-        done(null, user.id);
+        done(null, musician.id);
 
     });
     // deserialize user 
@@ -87,7 +88,7 @@ module.exports = function (passport, musician) {
 
         {
 
-            usernameField: 'userName',
+            usernameField: 'username',
 
             passwordField: 'password',
 
@@ -96,7 +97,10 @@ module.exports = function (passport, musician) {
         },
 
 
-        function (req, userName, password, done) {
+        function (req, username, password, done) {
+
+            var Musician = musician;
+            console.log(Musician)
 
             var isValidPassword = function (userpass, password) {
 
@@ -105,8 +109,9 @@ module.exports = function (passport, musician) {
             }
 
             Musician.findOne({
+
                 where: {
-                    username: userName
+                    username: username
                 }
             }).then(function (musician) {
 

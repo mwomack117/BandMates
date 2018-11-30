@@ -36,61 +36,9 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app, passport);
 require("./routes/htmlRoutes")(app);
-
-//Auth.js 
-  //get routes
-  app.get('/index', function (req, res) {
-
-      res.render('index');
-
-  });
-
-  app.get('/dashboard', function (req, res) {
-
-      res.render('dashboard');
-
-  });
-
-  app.get('/dashboard', isLoggedIn, function (req, res) {
-
-      res.render('dashboard');
-  });
-
-  app.get('/logout', function (req, res) {
-
-      req.session.destroy(function (err) {
-
-          res.redirect('/');
-
-      });
-  });
-  function isLoggedIn(req, res, next) {
-
-      if (req.isAuthenticated())
-
-          return next();
-
-      res.redirect('/landing');
-
-  }
-  //post routes
-  app.post('/index', passport.authenticate('local-signup', {
-      successRedirect: '/dashboard',
-
-      failureRedirect: '/index'
-  }));
-
-  app.post('/landing', passport.authenticate('local-signin', {
-      successRedirect: '/dashboard',
-
-      failureRedirect: '/landing'
-  }
-
-));
-
-
+require("./routes/auth")(app, passport);
 
 var syncOptions = { force: false };
 
@@ -105,6 +53,7 @@ var models = require("./models");
 
 //load passport strategies
 require('./config/passport.js')(passport, models.musician);
+
 //Sync Database
 models.sequelize.sync().then(function() {
  

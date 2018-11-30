@@ -1,6 +1,6 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function (app, passport) {
 
   // Post route for saving new musician
   app.post("/api/musicians/all/all/all", function (req, res) {
@@ -126,10 +126,4 @@ module.exports = function (app) {
     }
   });
   // --- End of search by specifics genre/instruent/band --- //
-
-
-
-
-
-
 };
