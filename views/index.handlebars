@@ -2,83 +2,83 @@
   <div class="container">
     <div class="row">
       <div id="contactCol" class="col-12">
-        <div class="jumbotron">
-        <h1>{{msg}}</h1>
-        <h3>Become a BandMates user to start searching for other musicians.</h3>
-        <form class="clearfix mb-4" id="new-user" method="POST">
-          <div class="form-group">
-            <!--Name Div-->
-            <div class="userName">
-              <label for="username">Enter a User name: </label>
+        <div class="jumbotron" id="signinBox">
+          <h1>{{msg}}</h1>
+          <h3>Become a BandMates user to start searching for other musicians.</h3>
+          <form class="clearfix mb-4" id="new-user" method="POST">
+            <div class="form-group">
+              <!--Name Div-->
+              <div class="userName">
+                <label for="username">Enter a User name: </label>
+                <div>
+                  <input type="text" name="questionOne" id="username" required>
+                </div>
+              </div>
+              <!--Password Div-->
+              <div class="password">
+                <label for="password">Enter your password: </label>
+                <div>
+                  <input type="text" name="questionTwo" id="password" required>
+                </div>
+              </div>
+              <!--Photo Div-->
               <div>
-                <input type="text" name="questionOne" id="username" required>
+                <label for="img">Add Photo (URL): </label>
+                <div>
+                  <input type="text" name="questionTwo" id="img">
+                </div>
+              </div>
+              <!--Solo or Band div-->
+              <div>
+                <label for="soloOrBand">Are you a band or solo artist?</label>
+                <div>
+                  <input type="radio" id="band" name="radAnswer" value="band">
+                  <label for="band">Band</label>&nbsp;&nbsp;
+                  <input type="radio" id="solo" name="radAnswer" value="solo">
+                  <label for="musician"> Solo Musician</label>
+                </div>
+              </div>
+              <!--Instrument div-->
+              <div class="Instrument">
+                <label for="instrument">What instrument(s) do you play? </label>
+                <div>
+                  <input type="text" name="questionSix" id="instrument">
+                </div>
+              </div>
+              <!--Genre div-->
+              <div class="genre">
+                <label for="genre">Genre of Music: </label>
+                <div>
+                  <input type="text" name="questionFive" id="genre">
+                </div>
+              </div>
+              <!--Years of Experience div-->
+              <div class="experience">
+                <label for="experience">Years of Experience: </label>
+                <div>
+                  <input type="text" name="questionSix" id="experience">
+                </div>
+              </div>
+              <!--Bio div-->
+              <div>
+                <label for="bio">Bio: </label>
+                <div>
+                  <textarea id="bio" name="about" rows="5" cols="33" placeholder="Tell us more about yourself.."></textarea>
+                </div>
+              </div>
+              <!--Genre div-->
+              <div class="email">
+                <label for="genre">Contact Email: </label>
+                <div>
+                  <input type="text" name="email" id="email" placeholder="example@email.com">
+                </div>
               </div>
             </div>
-            <!--Password Div-->
-            <div class="password">
-              <label for="password">Enter your password: </label>
-              <div>
-                <input type="text" name="questionTwo" id="password" required>
-              </div>
-            </div>
-            <!--Photo Div-->
-            <div>
-              <label for="img">Add Photo (URL): </label>
-              <div>
-                <input type="text" name="questionTwo" id="img">
-              </div>
-            </div>
-            <!--Solo or Band div-->
-            <div>
-              <label for="soloOrBand">Are you a band or solo artist?</label>
-              <div>
-                <input type="radio" id="band" name="radAnswer" value="band">
-                <label for="band">Band</label>&nbsp;&nbsp;
-                <input type="radio" id="solo" name="radAnswer" value="solo">
-                <label for="musician"> Solo Musician</label>
-              </div>
-            </div>
-            <!--Instrument div-->
-            <div class="Instrument">
-              <label for="instrument">What instrument(s) do you play? </label>
-              <div>
-                <input type="text" name="questionSix" id="instrument">
-              </div>
-            </div>
-            <!--Genre div-->
-            <div class="genre">
-              <label for="genre">Genre of Music: </label>
-              <div>
-                <input type="text" name="questionFive" id="genre">
-              </div>
-            </div>
-            <!--Years of Experience div-->
-            <div class="experience">
-              <label for="experience">Years of Experience: </label>
-              <div>
-                <input type="text" name="questionSix" id="experience">
-              </div>
-            </div>
-            <!--Bio div-->
-            <div>
-              <label for="bio">Bio: </label>
-              <div>
-                <textarea id="bio" name="about" rows="5" cols="33" placeholder="Tell us more about yourself.."></textarea>
-              </div>
-            </div>
-            <!--Genre div-->
-            <div class="email">
-              <label for="genre">Contact Email: </label>
-              <div>
-                <input type="text" name="email" id="email" placeholder="example@email.com">
-              </div>
-            </div>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </body>
 

@@ -8,9 +8,9 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/landing', function (req, res) {
+    app.get('/dashboard', function (req, res) {
 
-        res.render('landing');
+        res.render('dashboard');
 
     });
 
@@ -28,7 +28,7 @@ module.exports = function (app, passport) {
         });
     });
     function isLoggedIn(req, res, next) {
-
+        console.log(test)
         if (req.isAuthenticated())
 
             return next();
